@@ -11,7 +11,7 @@
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
     <artifactId>jquery-dropkick</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0</version>
     <name>DropKick</name>
     <description>WebJar for DropKick</description>
     <url>http://webjars.org</url>
@@ -36,7 +36,7 @@
         <url>http://github.com/webjars/jquery-dropkick</url>
         <connection>scm:git:https://github.com/webjars/jquery-dropkick.git</connection>
         <developerConnection>scm:git:https://github.com/webjars/jquery-dropkick.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>jquery-dropkick-1.0.0</tag>
     </scm>
     
     <dependencies>
