@@ -10,47 +10,47 @@
 
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
-    <artifactId>WEBJAR_ID</artifactId>
-    <version>UPSTREAM_VERSION-SNAPSHOT</version>
-    <name>WEBJAR_NAME</name>
-    <description>WebJar for WEBJAR_NAME</description>
+    <artifactId>jquery-dropkick</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <name>DropKick</name>
+    <description>WebJar for DropKick</description>
     <url>http://webjars.org</url>
 
     <developers>
         <developer>
-            <id>YOUR_ID</id>
-            <name>YOUR_NAME</name>
-            <email>YOUR_EMAIL</email>
+            <id>jamesward</id>
+            <name>James Ward</name>
+            <email>james@jamesward.com</email>
         </developer>
     </developers>
 
     <licenses>
         <license>
-            <name>UPSTREAM_LICENSE_NAME</name>
-            <url>UPSTREAM_LICENSE_VERSION</url>
+            <name>MIT</name>
+            <url>https://github.com/JamieLottering/DropKick/blob/v1.0.0/LICENSE</url>
             <distribution>repo</distribution>
         </license>
     </licenses>
 
     <scm>
-        <url>http://github.com/webjars/WEBJAR_ID</url>
-        <connection>scm:git:https://github.com/webjars/WEBJAR_ID.git</connection>
-        <developerConnection>scm:git:https://github.com/webjars/WEBJAR_ID.git</developerConnection>
+        <url>http://github.com/webjars/jquery-dropkick</url>
+        <connection>scm:git:https://github.com/webjars/jquery-dropkick.git</connection>
+        <developerConnection>scm:git:https://github.com/webjars/jquery-dropkick.git</developerConnection>
         <tag>HEAD</tag>
     </scm>
     
     <dependencies>
         <dependency>
             <groupId>org.webjars</groupId>
-            <artifactId>ANOTHER_WEBJAR_ID</artifactId>
-            <version>ANOTHER_WEBJAR_VERSION</version>
+            <artifactId>jquery</artifactId>
+            <version>1.9.1</version>
         </dependency>
     </dependencies>
     
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <upstream.version>UPSTREAM_VERSION</upstream.version>
-        <upstream.url>UPSTREAM_URL</upstream.url>
+        <upstream.version>1.0.0</upstream.version>
+        <upstream.url>https://raw.github.com/JamieLottering/DropKick/v${upstream.version}</upstream.url>
         <destDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${upstream.version}</destDir>
     </properties>
     
@@ -69,19 +69,31 @@
                         </goals>
                         <configuration>
                             <url>${upstream.url}</url>
-                            <fromFile>WEBJAR_ID.js</fromFile>
-                            <toDir>${destDir}</toDir>
+                            <fromFile>jquery.dropkick-${upstream.version}.js</fromFile>
+                            <toFile>${destDir}/jquery.dropkick.js</toFile>
                         </configuration>
                     </execution>
                     <execution>
-                        <id>download-min-js</id>
+                        <id>download-blank_theme</id>
                         <phase>process-resources</phase>
                         <goals>
                             <goal>download-single</goal>
                         </goals>
                         <configuration>
                             <url>${upstream.url}</url>
-                            <fromFile>WEBJAR_ID.min.js</fromFile>
+                            <fromFile>blank_theme.css</fromFile>
+                            <toDir>${destDir}</toDir>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>download-dropkick-css</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>download-single</goal>
+                        </goals>
+                        <configuration>
+                            <url>${upstream.url}</url>
+                            <fromFile>dropkick.css</fromFile>
                             <toDir>${destDir}</toDir>
                         </configuration>
                     </execution>
